@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="OP Custom Caption Guide — variables, HTML formatting and ready-to-copy Telegram leech caption templates.">
+<meta name="theme-color" content="#0a1020">
+<title>OP Custom Caption Guide</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient a1"></div><div class="ambient a2"></div>
+<header class="topbar">
+  <a class="brand" href="#top"><span class="brand-mark">OP</span><span>Caption Guide</span></a>
+  <div class="top-actions"><button id="themeToggle" class="icon-btn" title="Toggle theme">☀️</button><a class="github-btn" href="#publish">GitHub Pages</a></div>
+</header>
+<div class="layout" id="top">
+<aside class="sidebar">
+  <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search variables, e.g. codec..." autocomplete="off"><kbd>/</kbd></div>
+  <nav><a href="#file">📁 File Information</a><a href="#title">🎬 Title / Movie / Series</a><a href="#source">📺 Resolution / Source</a><a href="#video">🎥 Video Information</a><a href="#audio">🔊 Audio / Language</a><a href="#subs">💬 Subtitle Information</a><a href="#release">🏷 Release Information</a><a href="#original">📨 Original Source Information</a><a href="#checksum">🔐 Checksum</a><a href="#examples">🧪 Output Examples</a><a href="#differences">🧠 Important Differences</a><a href="#html-formatting">✨ HTML Formatting</a><a href="#templates">📝 Templates</a><a href="#tips">💡 Quick Tips</a></nav>
+  <div class="side-note"><strong>MD5 is lazy</strong><p><code>{md5_hash}</code> is calculated only when your template actually uses it.</p></div>
+</aside>
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <span class="pill">OP Documentation</span>
+    <h1>Custom Caption <span>Guide</span></h1>
+    <p>Build clean Telegram leech captions using file metadata, movie/series information, audio languages, source quality, codecs, subtitles and HTML formatting.</p>
+    <div class="hero-actions"><a class="primary" href="#file">Browse variables</a><a class="secondary" href="#templates">Copy templates</a></div>
+  </div>
+  <div class="hero-card">
+    <div class="code-title"><span>Recommended template</span><button class="copy mini" data-copy="<b>{name} {year} {resolution} {ott} {source_quality} {shortlang} [{languages}] {audio} {codec} {shortsub} - OP{extension}</b>">Copy</button></div>
+    <pre><code>&lt;b&gt;{name} {year} {resolution} {ott} {source_quality} {shortlang} [{languages}] {audio} {codec} {shortsub} - OP{extension}&lt;/b&gt;</code></pre>
+    <div class="result">Habeebi 2026 1080p SLIV WEB-DL DUAL [Hindi + Tamil] DDP5.1 H.264 ESub - OP.mkv</div>
+  </div>
+</section>
+<div id="noResults" class="no-results" hidden>No matching variables or templates found.</div>
+<section id="file" class="doc-section"><div class="section-title"><span>📁 File Information</span><span class="count">9 variables</span></div><div class="var-grid"><article class="var-card searchable" data-search="{filename} final complete filename used for the upload."><div class="var-head"><code>{filename}</code><button class="copy mini" data-copy="{filename}" aria-label="Copy {filename}">Copy</button></div><p>Final complete filename used for the upload.</p></article><article class="var-card searchable" data-search="{upload_filename} filename actually sent to telegram after upload-side processing."><div class="var-head"><code>{upload_filename}</code><button class="copy mini" data-copy="{upload_filename}" aria-label="Copy {upload_filename}">Copy</button></div><p>Filename actually sent to Telegram after upload-side processing.</p></article><article class="var-card searchable" data-search="{file_name} full file name."><div class="var-head"><code>{file_name}</code><button class="copy mini" data-copy="{file_name}" aria-label="Copy {file_name}">Copy</button></div><p>Full file name.</p></article><article class="var-card searchable" data-search="{raw_name} filename without its extension."><div class="var-head"><code>{raw_name}</code><button class="copy mini" data-copy="{raw_name}" aria-label="Copy {raw_name}">Copy</button></div><p>Filename without its extension.</p></article><article class="var-card searchable" data-search="{extension} file extension including the dot."><div class="var-head"><code>{extension}</code><button class="copy mini" data-copy="{extension}" aria-label="Copy {extension}">Copy</button></div><p>File extension including the dot.</p></article><article class="var-card searchable" data-search="{size} readable file size."><div class="var-head"><code>{size}</code><button class="copy mini" data-copy="{size}" aria-label="Copy {size}">Copy</button></div><p>Readable file size.</p></article><article class="var-card searchable" data-search="{file_size} readable file-size alias."><div class="var-head"><code>{file_size}</code><button class="copy mini" data-copy="{file_size}" aria-label="Copy {file_size}">Copy</button></div><p>Readable file-size alias.</p></article><article class="var-card searchable" data-search="{duration} detected media duration."><div class="var-head"><code>{duration}</code><button class="copy mini" data-copy="{duration}" aria-label="Copy {duration}">Copy</button></div><p>Detected media duration.</p></article><article class="var-card searchable" data-search="{mime_type} detected mime type of the file."><div class="var-head"><code>{mime_type}</code><button class="copy mini" data-copy="{mime_type}" aria-label="Copy {mime_type}">Copy</button></div><p>Detected MIME type of the file.</p></article></div></section><section id="title" class="doc-section"><div class="section-title"><span>🎬 Title / Movie / Series</span><span class="count">7 variables</span></div><div class="var-grid"><article class="var-card searchable" data-search="{name} clean detected movie or series name."><div class="var-head"><code>{name}</code><button class="copy mini" data-copy="{name}" aria-label="Copy {name}">Copy</button></div><p>Clean detected movie or series name.</p></article><article class="var-card searchable" data-search="{title} clean title alias."><div class="var-head"><code>{title}</code><button class="copy mini" data-copy="{title}" aria-label="Copy {title}">Copy</button></div><p>Clean title alias.</p></article><article class="var-card searchable" data-search="{year} detected release year."><div class="var-head"><code>{year}</code><button class="copy mini" data-copy="{year}" aria-label="Copy {year}">Copy</button></div><p>Detected release year.</p></article><article class="var-card searchable" data-search="{season} detected season number."><div class="var-head"><code>{season}</code><button class="copy mini" data-copy="{season}" aria-label="Copy {season}">Copy</button></div><p>Detected season number.</p></article><article class="var-card searchable" data-search="{episode} detected episode number."><div class="var-head"><code>{episode}</code><button class="copy mini" data-copy="{episode}" aria-label="Copy {episode}">Copy</button></div><p>Detected episode number.</p></article><article class="var-card searchable" data-search="{chapter} detected chapter number when available."><div class="var-head"><code>{chapter}</code><button class="copy mini" data-copy="{chapter}" aria-label="Copy {chapter}">Copy</button></div><p>Detected chapter number when available.</p></article><article class="var-card searchable" data-search="{part} detected part number when available."><div class="var-head"><code>{part}</code><button class="copy mini" data-copy="{part}" aria-label="Copy {part}">Copy</button></div><p>Detected part number when available.</p></article></div></section><section id="source" class="doc-section"><div class="section-title"><span>📺 Resolution / Source</span><span class="count">6 variables</span></div><div class="var-grid"><article class="var-card searchable" data-search="{resolution} detected video resolution."><div class="var-head"><code>{resolution}</code><button class="copy mini" data-copy="{resolution}" aria-label="Copy {resolution}">Copy</button></div><p>Detected video resolution.</p></article><article class="var-card searchable" data-search="{quality} legacy op compatibility variable; normally contains the resolution."><div class="var-head"><code>{quality}</code><button class="copy mini" data-copy="{quality}" aria-label="Copy {quality}">Copy</button></div><p>Legacy OP compatibility variable; normally contains the resolution.</p></article><article class="var-card searchable" data-search="{source_quality} detected release/source quality."><div class="var-head"><code>{source_quality}</code><button class="copy mini" data-copy="{source_quality}" aria-label="Copy {source_quality}">Copy</button></div><p>Detected release/source quality.</p></article><article class="var-card searchable" data-search="{source} source-quality alias when available."><div class="var-head"><code>{source}</code><button class="copy mini" data-copy="{source}" aria-label="Copy {source}">Copy</button></div><p>Source-quality alias when available.</p></article><article class="var-card searchable" data-search="{ott} detected ott or streaming-platform tag."><div class="var-head"><code>{ott}</code><button class="copy mini" data-copy="{ott}" aria-label="Copy {ott}">Copy</button></div><p>Detected OTT or streaming-platform tag.</p></article><article class="var-card searchable" data-search="{ds4k} returns ds4k when that release tag exists."><div class="var-head"><code>{DS4K}</code><button class="copy mini" data-copy="{DS4K}" aria-label="Copy {DS4K}">Copy</button></div><p>Returns DS4K when that release tag exists.</p></article></div></section><section id="video" class="doc-section"><div class="section-title"><span>🎥 Video Information</span><span class="count">6 variables</span></div><div class="var-grid"><article class="var-card searchable" data-search="{codec} detected video codec."><div class="var-head"><code>{codec}</code><button class="copy mini" data-copy="{codec}" aria-label="Copy {codec}">Copy</button></div><p>Detected video codec.</p></article><article class="var-card searchable" data-search="{vcodec} video codec variable."><div class="var-head"><code>{vcodec}</code><button class="copy mini" data-copy="{vcodec}" aria-label="Copy {vcodec}">Copy</button></div><p>Video codec variable.</p></article><article class="var-card searchable" data-search="{lib} compatibility alias for video codec."><div class="var-head"><code>{lib}</code><button class="copy mini" data-copy="{lib}" aria-label="Copy {lib}">Copy</button></div><p>Compatibility alias for video codec.</p></article><article class="var-card searchable" data-search="{bit} detected video bit depth."><div class="var-head"><code>{bit}</code><button class="copy mini" data-copy="{bit}" aria-label="Copy {bit}">Copy</button></div><p>Detected video bit depth.</p></article><article class="var-card searchable" data-search="{hdr} detected hdr / dolby vision information."><div class="var-head"><code>{hdr}</code><button class="copy mini" data-copy="{hdr}" aria-label="Copy {hdr}">Copy</button></div><p>Detected HDR / Dolby Vision information.</p></article><article class="var-card searchable" data-search="{dynamic_range} detected dynamic-range information."><div class="var-head"><code>{dynamic_range}</code><button class="copy mini" data-copy="{dynamic_range}" aria-label="Copy {dynamic_range}">Copy</button></div><p>Detected dynamic-range information.</p></article></div></section><section id="audio" class="doc-section"><div class="section-title"><span>🔊 Audio / Language</span><span class="count">8 variables</span></div><div class="var-grid"><article class="var-card searchable" data-search="{languages} readable detected audio-language list."><div class="var-head"><code>{languages}</code><button class="copy mini" data-copy="{languages}" aria-label="Copy {languages}">Copy</button></div><p>Readable detected audio-language list.</p></article><article class="var-card searchable" data-search="{audios} legacy op audio-language list."><div class="var-head"><code>{audios}</code><button class="copy mini" data-copy="{audios}" aria-label="Copy {audios}">Copy</button></div><p>Legacy OP audio-language list.</p></article><article class="var-card searchable" data-search="{shortlang} short language label."><div class="var-head"><code>{shortlang}</code><button class="copy mini" data-copy="{shortlang}" aria-label="Copy {shortlang}">Copy</button></div><p>Short language label.</p></article><article class="var-card searchable" data-search="{audio} combined audio codec and channel information."><div class="var-head"><code>{audio}</code><button class="copy mini" data-copy="{audio}" aria-label="Copy {audio}">Copy</button></div><p>Combined audio codec and channel information.</p></article><article class="var-card searchable" data-search="{acodec} short audio codec value."><div class="var-head"><code>{acodec}</code><button class="copy mini" data-copy="{acodec}" aria-label="Copy {acodec}">Copy</button></div><p>Short audio codec value.</p></article><article class="var-card searchable" data-search="{audio_codec} detected audio codec."><div class="var-head"><code>{audio_codec}</code><button class="copy mini" data-copy="{audio_codec}" aria-label="Copy {audio_codec}">Copy</button></div><p>Detected audio codec.</p></article><article class="var-card searchable" data-search="{audio_channels} detected audio channel layout."><div class="var-head"><code>{audio_channels}</code><button class="copy mini" data-copy="{audio_channels}" aria-label="Copy {audio_channels}">Copy</button></div><p>Detected audio channel layout.</p></article><article class="var-card searchable" data-search="{audio_bitrate} detected audio bitrate when available."><div class="var-head"><code>{audio_bitrate}</code><button class="copy mini" data-copy="{audio_bitrate}" aria-label="Copy {audio_bitrate}">Copy</button></div><p>Detected audio bitrate when available.</p></article></div></section><section id="subs" class="doc-section"><div class="section-title"><span>💬 Subtitle Information</span><span class="count">2 variables</span></div><div class="var-grid"><article class="var-card searchable" data-search="{subtitles} detected subtitle languages."><div class="var-head"><code>{subtitles}</code><button class="copy mini" data-copy="{subtitles}" aria-label="Copy {subtitles}">Copy</button></div><p>Detected subtitle languages.</p></article><article class="var-card searchable" data-search="{shortsub} short subtitle label."><div class="var-head"><code>{shortsub}</code><button class="copy mini" data-copy="{shortsub}" aria-label="Copy {shortsub}">Copy</button></div><p>Short subtitle label.</p></article></div></section><section id="release" class="doc-section"><div class="section-title"><span>🏷 Release Information</span><span class="count">2 variables</span></div><div class="var-grid"><article class="var-card searchable" data-search="{release_group} detected release / encode / uploader group."><div class="var-head"><code>{release_group}</code><button class="copy mini" data-copy="{release_group}" aria-label="Copy {release_group}">Copy</button></div><p>Detected release / encode / uploader group.</p></article><article class="var-card searchable" data-search="{group} alias for release group."><div class="var-head"><code>{group}</code><button class="copy mini" data-copy="{group}" aria-label="Copy {group}">Copy</button></div><p>Alias for release group.</p></article></div></section><section id="original" class="doc-section"><div class="section-title"><span>📨 Original Source Information</span><span class="count">4 variables</span></div><div class="var-grid"><article class="var-card searchable" data-search="{prefilename} original filename before final upload processing."><div class="var-head"><code>{prefilename}</code><button class="copy mini" data-copy="{prefilename}" aria-label="Copy {prefilename}">Copy</button></div><p>Original filename before final upload processing.</p></article><article class="var-card searchable" data-search="{precaption} original telegram/source caption when available."><div class="var-head"><code>{precaption}</code><button class="copy mini" data-copy="{precaption}" aria-label="Copy {precaption}">Copy</button></div><p>Original Telegram/source caption when available.</p></article><article class="var-card searchable" data-search="{file_caption} original file/source caption information."><div class="var-head"><code>{file_caption}</code><button class="copy mini" data-copy="{file_caption}" aria-label="Copy {file_caption}">Copy</button></div><p>Original file/source caption information.</p></article><article class="var-card searchable" data-search="{link} associated source link when available."><div class="var-head"><code>{link}</code><button class="copy mini" data-copy="{link}" aria-label="Copy {link}">Copy</button></div><p>Associated source link when available.</p></article></div></section><section id="checksum" class="doc-section"><div class="section-title"><span>🔐 Checksum</span><span class="count">1 variables</span></div><div class="var-grid"><article class="var-card searchable" data-search="{md5_hash} md5 checksum calculated from the actual file. calculated only when this variable is used."><div class="var-head"><code>{md5_hash}</code><button class="copy mini" data-copy="{md5_hash}" aria-label="Copy {md5_hash}">Copy</button></div><p>MD5 checksum calculated from the actual file. Calculated only when this variable is used.</p></article></div></section>
+<section id="examples" class="doc-section">
+  <div class="section-title"><span>🧪 Variable Output Examples</span></div>
+  <div class="sample-file"><span>Example source</span><code>Habeebi.2026.1080p.SLIV.WEB-DL.DUAL.DDP5.1.H.264-ExtraFlix.Pw.mkv</code></div>
+  <div class="example-list"><div class="example-row searchable" data-search="{name} habeebi"><code>{name}</code><span>Habeebi</span><button class="copy mini" data-copy="{name}">Copy</button></div><div class="example-row searchable" data-search="{title} habeebi"><code>{title}</code><span>Habeebi</span><button class="copy mini" data-copy="{title}">Copy</button></div><div class="example-row searchable" data-search="{year} 2026"><code>{year}</code><span>2026</span><button class="copy mini" data-copy="{year}">Copy</button></div><div class="example-row searchable" data-search="{resolution} 1080p"><code>{resolution}</code><span>1080p</span><button class="copy mini" data-copy="{resolution}">Copy</button></div><div class="example-row searchable" data-search="{quality} 1080p"><code>{quality}</code><span>1080p</span><button class="copy mini" data-copy="{quality}">Copy</button></div><div class="example-row searchable" data-search="{source_quality} web-dl"><code>{source_quality}</code><span>WEB-DL</span><button class="copy mini" data-copy="{source_quality}">Copy</button></div><div class="example-row searchable" data-search="{source} web-dl"><code>{source}</code><span>WEB-DL</span><button class="copy mini" data-copy="{source}">Copy</button></div><div class="example-row searchable" data-search="{ott} sliv"><code>{ott}</code><span>SLIV</span><button class="copy mini" data-copy="{ott}">Copy</button></div><div class="example-row searchable" data-search="{languages} hindi + tamil"><code>{languages}</code><span>Hindi + Tamil</span><button class="copy mini" data-copy="{languages}">Copy</button></div><div class="example-row searchable" data-search="{audios} hindi, tamil"><code>{audios}</code><span>Hindi, Tamil</span><button class="copy mini" data-copy="{audios}">Copy</button></div><div class="example-row searchable" data-search="{shortlang} dual"><code>{shortlang}</code><span>DUAL</span><button class="copy mini" data-copy="{shortlang}">Copy</button></div><div class="example-row searchable" data-search="{audio} ddp5.1"><code>{audio}</code><span>DDP5.1</span><button class="copy mini" data-copy="{audio}">Copy</button></div><div class="example-row searchable" data-search="{acodec} ddp"><code>{acodec}</code><span>DDP</span><button class="copy mini" data-copy="{acodec}">Copy</button></div><div class="example-row searchable" data-search="{audio_codec} ddp"><code>{audio_codec}</code><span>DDP</span><button class="copy mini" data-copy="{audio_codec}">Copy</button></div><div class="example-row searchable" data-search="{audio_channels} 5.1"><code>{audio_channels}</code><span>5.1</span><button class="copy mini" data-copy="{audio_channels}">Copy</button></div><div class="example-row searchable" data-search="{audio_bitrate} 640kbps"><code>{audio_bitrate}</code><span>640kbps</span><button class="copy mini" data-copy="{audio_bitrate}">Copy</button></div><div class="example-row searchable" data-search="{codec} h.264"><code>{codec}</code><span>H.264</span><button class="copy mini" data-copy="{codec}">Copy</button></div><div class="example-row searchable" data-search="{vcodec} h.264"><code>{vcodec}</code><span>H.264</span><button class="copy mini" data-copy="{vcodec}">Copy</button></div><div class="example-row searchable" data-search="{lib} h.264"><code>{lib}</code><span>H.264</span><button class="copy mini" data-copy="{lib}">Copy</button></div><div class="example-row searchable" data-search="{bit} 10bit"><code>{bit}</code><span>10bit</span><button class="copy mini" data-copy="{bit}">Copy</button></div><div class="example-row searchable" data-search="{hdr} hdr"><code>{hdr}</code><span>HDR</span><button class="copy mini" data-copy="{hdr}">Copy</button></div><div class="example-row searchable" data-search="{dynamic_range} hdr"><code>{dynamic_range}</code><span>HDR</span><button class="copy mini" data-copy="{dynamic_range}">Copy</button></div><div class="example-row searchable" data-search="{subtitles} english"><code>{subtitles}</code><span>English</span><button class="copy mini" data-copy="{subtitles}">Copy</button></div><div class="example-row searchable" data-search="{shortsub} esub"><code>{shortsub}</code><span>ESub</span><button class="copy mini" data-copy="{shortsub}">Copy</button></div><div class="example-row searchable" data-search="{release_group} extraflix.pw"><code>{release_group}</code><span>ExtraFlix.Pw</span><button class="copy mini" data-copy="{release_group}">Copy</button></div><div class="example-row searchable" data-search="{group} extraflix.pw"><code>{group}</code><span>ExtraFlix.Pw</span><button class="copy mini" data-copy="{group}">Copy</button></div><div class="example-row searchable" data-search="{extension} .mkv"><code>{extension}</code><span>.mkv</span><button class="copy mini" data-copy="{extension}">Copy</button></div><div class="example-row searchable" data-search="{raw_name} habeebi.2026.1080p.sliv.web-dl.dual.ddp5.1.h.264-extraflix.pw"><code>{raw_name}</code><span>Habeebi.2026.1080p.SLIV.WEB-DL.DUAL.DDP5.1.H.264-ExtraFlix.Pw</span><button class="copy mini" data-copy="{raw_name}">Copy</button></div><div class="example-row searchable" data-search="{size} 2.45 gb"><code>{size}</code><span>2.45 GB</span><button class="copy mini" data-copy="{size}">Copy</button></div><div class="example-row searchable" data-search="{file_size} 2.45 gb"><code>{file_size}</code><span>2.45 GB</span><button class="copy mini" data-copy="{file_size}">Copy</button></div><div class="example-row searchable" data-search="{duration} 2h 08m 16s"><code>{duration}</code><span>2h 08m 16s</span><button class="copy mini" data-copy="{duration}">Copy</button></div><div class="example-row searchable" data-search="{mime_type} video/x-matroska"><code>{mime_type}</code><span>video/x-matroska</span><button class="copy mini" data-copy="{mime_type}">Copy</button></div><div class="example-row searchable" data-search="{season} 1"><code>{season}</code><span>1</span><button class="copy mini" data-copy="{season}">Copy</button></div><div class="example-row searchable" data-search="{episode} 03"><code>{episode}</code><span>03</span><button class="copy mini" data-copy="{episode}">Copy</button></div><div class="example-row searchable" data-search="{chapter} 12"><code>{chapter}</code><span>12</span><button class="copy mini" data-copy="{chapter}">Copy</button></div><div class="example-row searchable" data-search="{part} p02"><code>{part}</code><span>P02</span><button class="copy mini" data-copy="{part}">Copy</button></div><div class="example-row searchable" data-search="{ds4k} ds4k"><code>{DS4K}</code><span>DS4K</span><button class="copy mini" data-copy="{DS4K}">Copy</button></div><div class="example-row searchable" data-search="{md5_hash} e10adc3949ba59abbe56e057f20f883e"><code>{md5_hash}</code><span>e10adc3949ba59abbe56e057f20f883e</span><button class="copy mini" data-copy="{md5_hash}">Copy</button></div></div>
+  <p class="muted">These values are examples only. Actual output depends on filename and media metadata. Optional values that cannot be detected are normally left empty.</p>
+</section>
+<section id="differences" class="doc-section">
+  <div class="section-title"><span>🧠 Important Differences</span></div>
+  <div class="difference-grid"><div class="difference searchable" data-search="{resolution} 720p / 1080p / 2160p"><code>{resolution}</code><span>720p / 1080p / 2160p</span></div><div class="difference searchable" data-search="{quality} legacy op compatibility; normally resolution."><code>{quality}</code><span>Legacy OP compatibility; normally resolution.</span></div><div class="difference searchable" data-search="{source_quality} web-dl / webrip / bluray / remux / hdtv / dvdrip"><code>{source_quality}</code><span>WEB-DL / WEBRip / BluRay / REMUX / HDTV / DVDRip</span></div><div class="difference searchable" data-search="{languages} hindi + tamil"><code>{languages}</code><span>Hindi + Tamil</span></div><div class="difference searchable" data-search="{audios} hindi, tamil"><code>{audios}</code><span>Hindi, Tamil</span></div><div class="difference searchable" data-search="{shortlang} hindi / dual / multi3"><code>{shortlang}</code><span>Hindi / DUAL / Multi3</span></div><div class="difference searchable" data-search="{subtitles} english, hindi"><code>{subtitles}</code><span>English, Hindi</span></div><div class="difference searchable" data-search="{shortsub} esub / msub / sub"><code>{shortsub}</code><span>ESub / MSub / Sub</span></div><div class="difference searchable" data-search="{codec} h.264 / h.265 / av1"><code>{codec}</code><span>H.264 / H.265 / AV1</span></div><div class="difference searchable" data-search="{audio} aac2.0 / ddp5.1 / dts5.1 / truehd7.1"><code>{audio}</code><span>AAC2.0 / DDP5.1 / DTS5.1 / TrueHD7.1</span></div><div class="difference searchable" data-search="{release_group} extraflix.pw / megusta"><code>{release_group}</code><span>ExtraFlix.Pw / MeGusta</span></div></div>
+  <div class="callout"><strong>Compatibility note</strong><p><code>{quality}</code> stays compatible with older OP captions and normally means resolution. Use <code>{source_quality}</code> when you specifically want WEB-DL, BluRay, REMUX, etc.</p></div>
+</section>
+<section id="html-formatting" class="doc-section">
+  <div class="section-title"><span>✨ HTML Formatting</span></div>
+  <div class="format-grid"><div class="format-card"><span>Bold</span><code>&lt;b&gt;Text&lt;/b&gt;</code><button class="copy mini" data-copy="&lt;b&gt;Text&lt;/b&gt;">Copy</button></div><div class="format-card"><span>Alternative bold</span><code>&lt;strong&gt;Text&lt;/strong&gt;</code><button class="copy mini" data-copy="&lt;strong&gt;Text&lt;/strong&gt;">Copy</button></div><div class="format-card"><span>Italic</span><code>&lt;i&gt;Text&lt;/i&gt;</code><button class="copy mini" data-copy="&lt;i&gt;Text&lt;/i&gt;">Copy</button></div><div class="format-card"><span>Alternative italic</span><code>&lt;em&gt;Text&lt;/em&gt;</code><button class="copy mini" data-copy="&lt;em&gt;Text&lt;/em&gt;">Copy</button></div><div class="format-card"><span>Underline</span><code>&lt;u&gt;Text&lt;/u&gt;</code><button class="copy mini" data-copy="&lt;u&gt;Text&lt;/u&gt;">Copy</button></div><div class="format-card"><span>Alternative underline</span><code>&lt;ins&gt;Text&lt;/ins&gt;</code><button class="copy mini" data-copy="&lt;ins&gt;Text&lt;/ins&gt;">Copy</button></div><div class="format-card"><span>Strike</span><code>&lt;s&gt;Text&lt;/s&gt;</code><button class="copy mini" data-copy="&lt;s&gt;Text&lt;/s&gt;">Copy</button></div><div class="format-card"><span>Alternative strike</span><code>&lt;strike&gt;Text&lt;/strike&gt; or &lt;del&gt;Text&lt;/del&gt;</code><button class="copy mini" data-copy="&lt;strike&gt;Text&lt;/strike&gt; or &lt;del&gt;Text&lt;/del&gt;">Copy</button></div><div class="format-card"><span>Monospace</span><code>&lt;code&gt;Text&lt;/code&gt;</code><button class="copy mini" data-copy="&lt;code&gt;Text&lt;/code&gt;">Copy</button></div><div class="format-card"><span>Preformatted</span><code>&lt;pre&gt;Text&lt;/pre&gt;</code><button class="copy mini" data-copy="&lt;pre&gt;Text&lt;/pre&gt;">Copy</button></div><div class="format-card"><span>Spoiler</span><code>&lt;tg-spoiler&gt;Text&lt;/tg-spoiler&gt;</code><button class="copy mini" data-copy="&lt;tg-spoiler&gt;Text&lt;/tg-spoiler&gt;">Copy</button></div><div class="format-card"><span>Quote</span><code>&lt;blockquote&gt;Text&lt;/blockquote&gt;</code><button class="copy mini" data-copy="&lt;blockquote&gt;Text&lt;/blockquote&gt;">Copy</button></div><div class="format-card"><span>Link</span><code>&lt;a href=&quot;https://example.com&quot;&gt;Open Link&lt;/a&gt;</code><button class="copy mini" data-copy="&lt;a href=&quot;https://example.com&quot;&gt;Open Link&lt;/a&gt;">Copy</button></div></div>
+  <div class="callout"><strong>Telegram HTML tips</strong><p>Press Enter for a new line. Do not use <code>&lt;br&gt;</code>. Spoilers use <code>&lt;tg-spoiler&gt;...&lt;/tg-spoiler&gt;</code>.</p><p><b>Correct:</b> <code>&lt;b&gt;{name}&lt;/b&gt;</code> &nbsp; <b>Wrong:</b> <code>&lt;/b&gt;{name}&lt;/b&gt;</code></p></div>
+</section>
+<section id="templates" class="doc-section">
+  <div class="section-title"><span>📝 Ready-to-Copy Templates</span><span class="count">8 templates</span></div>
+  <div class="template-list"><article class="template-card searchable" data-search="clean release name &lt;b&gt;{name} {year} {resolution} {ott} {source_quality} {shortlang} [{languages}] {audio} {codec} {shortsub} - op{extension}&lt;/b&gt; habeebi 2026 1080p sliv web-dl dual [hindi + tamil] ddp5.1 h.264 esub - op.mkv">
+      <div class="template-head"><div><span class="eyebrow">Template 1</span><h3>Clean Release Name</h3></div><button class="copy" data-copy="&lt;b&gt;{name} {year} {resolution} {ott} {source_quality} {shortlang} [{languages}] {audio} {codec} {shortsub} - OP{extension}&lt;/b&gt;">Copy template</button></div>
+      <pre><code>&lt;b&gt;{name} {year} {resolution} {ott} {source_quality} {shortlang} [{languages}] {audio} {codec} {shortsub} - OP{extension}&lt;/b&gt;</code></pre>
+      <div class="output"><span>Example / note</span><pre>Habeebi 2026 1080p SLIV WEB-DL DUAL [Hindi + Tamil] DDP5.1 H.264 ESub - OP.mkv</pre></div>
+    </article><article class="template-card searchable" data-search="movie information &lt;b&gt;🎬 {name} ({year})&lt;/b&gt;
+
+📺 &lt;code&gt;{resolution}&lt;/code&gt; • &lt;code&gt;{source_quality}&lt;/code&gt;
+📡 &lt;code&gt;{ott}&lt;/code&gt;
+🌐 &lt;code&gt;{languages}&lt;/code&gt;
+🔊 &lt;code&gt;{audio}&lt;/code&gt;
+🎥 &lt;code&gt;{codec}&lt;/code&gt;
+✨ &lt;code&gt;{hdr}&lt;/code&gt;
+
+📦 &lt;b&gt;size:&lt;/b&gt; &lt;code&gt;{size}&lt;/code&gt;
+⏱ &lt;b&gt;duration:&lt;/b&gt; &lt;code&gt;{duration}&lt;/code&gt; 🎬 habeebi (2026)
+
+📺 1080p • web-dl
+📡 sliv
+🌐 hindi + tamil
+🔊 ddp5.1
+🎥 h.264
+✨ hdr
+
+📦 size: 2.45 gb
+⏱ duration: 2h 08m 16s">
+      <div class="template-head"><div><span class="eyebrow">Template 2</span><h3>Movie Information</h3></div><button class="copy" data-copy="&lt;b&gt;🎬 {name} ({year})&lt;/b&gt;
+
+📺 &lt;code&gt;{resolution}&lt;/code&gt; • &lt;code&gt;{source_quality}&lt;/code&gt;
+📡 &lt;code&gt;{ott}&lt;/code&gt;
+🌐 &lt;code&gt;{languages}&lt;/code&gt;
+🔊 &lt;code&gt;{audio}&lt;/code&gt;
+🎥 &lt;code&gt;{codec}&lt;/code&gt;
+✨ &lt;code&gt;{hdr}&lt;/code&gt;
+
+📦 &lt;b&gt;Size:&lt;/b&gt; &lt;code&gt;{size}&lt;/code&gt;
+⏱ &lt;b&gt;Duration:&lt;/b&gt; &lt;code&gt;{duration}&lt;/code&gt;">Copy template</button></div>
+      <pre><code>&lt;b&gt;🎬 {name} ({year})&lt;/b&gt;
+
+📺 &lt;code&gt;{resolution}&lt;/code&gt; • &lt;code&gt;{source_quality}&lt;/code&gt;
+📡 &lt;code&gt;{ott}&lt;/code&gt;
+🌐 &lt;code&gt;{languages}&lt;/code&gt;
+🔊 &lt;code&gt;{audio}&lt;/code&gt;
+🎥 &lt;code&gt;{codec}&lt;/code&gt;
+✨ &lt;code&gt;{hdr}&lt;/code&gt;
+
+📦 &lt;b&gt;Size:&lt;/b&gt; &lt;code&gt;{size}&lt;/code&gt;
+⏱ &lt;b&gt;Duration:&lt;/b&gt; &lt;code&gt;{duration}&lt;/code&gt;</code></pre>
+      <div class="output"><span>Example / note</span><pre>🎬 Habeebi (2026)
+
+📺 1080p • WEB-DL
+📡 SLIV
+🌐 Hindi + Tamil
+🔊 DDP5.1
+🎥 H.264
+✨ HDR
+
+📦 Size: 2.45 GB
+⏱ Duration: 2h 08m 16s</pre></div>
+    </article><article class="template-card searchable" data-search="tv / series &lt;b&gt;🎬 {name}&lt;/b&gt;
+
+📺 season: &lt;code&gt;{season}&lt;/code&gt;
+🎞 episode: &lt;code&gt;{episode}&lt;/code&gt;
+📐 quality: &lt;code&gt;{resolution} {source_quality}&lt;/code&gt;
+📡 ott: &lt;code&gt;{ott}&lt;/code&gt;
+🌐 languages: &lt;code&gt;{languages}&lt;/code&gt;
+🔊 audio: &lt;code&gt;{audio}&lt;/code&gt;
+💬 subs: &lt;code&gt;{shortsub}&lt;/code&gt;
+
+📦 size: &lt;code&gt;{size}&lt;/code&gt; 🎬 stranger things
+
+📺 season: 5
+🎞 episode: 03
+📐 quality: 1080p web-dl
+📡 ott: nf
+🌐 languages: english + hindi
+🔊 audio: ddp5.1
+💬 subs: esub
+
+📦 size: 794.33 mb">
+      <div class="template-head"><div><span class="eyebrow">Template 3</span><h3>TV / Series</h3></div><button class="copy" data-copy="&lt;b&gt;🎬 {name}&lt;/b&gt;
+
+📺 Season: &lt;code&gt;{season}&lt;/code&gt;
+🎞 Episode: &lt;code&gt;{episode}&lt;/code&gt;
+📐 Quality: &lt;code&gt;{resolution} {source_quality}&lt;/code&gt;
+📡 OTT: &lt;code&gt;{ott}&lt;/code&gt;
+🌐 Languages: &lt;code&gt;{languages}&lt;/code&gt;
+🔊 Audio: &lt;code&gt;{audio}&lt;/code&gt;
+💬 Subs: &lt;code&gt;{shortsub}&lt;/code&gt;
+
+📦 Size: &lt;code&gt;{size}&lt;/code&gt;">Copy template</button></div>
+      <pre><code>&lt;b&gt;🎬 {name}&lt;/b&gt;
+
+📺 Season: &lt;code&gt;{season}&lt;/code&gt;
+🎞 Episode: &lt;code&gt;{episode}&lt;/code&gt;
+📐 Quality: &lt;code&gt;{resolution} {source_quality}&lt;/code&gt;
+📡 OTT: &lt;code&gt;{ott}&lt;/code&gt;
+🌐 Languages: &lt;code&gt;{languages}&lt;/code&gt;
+🔊 Audio: &lt;code&gt;{audio}&lt;/code&gt;
+💬 Subs: &lt;code&gt;{shortsub}&lt;/code&gt;
+
+📦 Size: &lt;code&gt;{size}&lt;/code&gt;</code></pre>
+      <div class="output"><span>Example / note</span><pre>🎬 Stranger Things
+
+📺 Season: 5
+🎞 Episode: 03
+📐 Quality: 1080p WEB-DL
+📡 OTT: NF
+🌐 Languages: English + Hindi
+🔊 Audio: DDP5.1
+💬 Subs: ESub
+
+📦 Size: 794.33 MB</pre></div>
+    </article><article class="template-card searchable" data-search="technical release info &lt;b&gt;🎬 {name} {year}&lt;/b&gt;
+
+&lt;blockquote&gt;📐 resolution: {resolution}
+📀 source: {source_quality}
+📡 ott: {ott}
+🎥 video: {codec} {bit}
+✨ dynamic range: {dynamic_range}
+🔊 audio: {audio}
+🌐 languages: {languages}
+💬 subtitles: {subtitles}
+🏷 group: {release_group}&lt;/blockquote&gt;
+
+📦 &lt;code&gt;{size}&lt;/code&gt; 🎬 habeebi 2026
+
+resolution: 1080p
+source: web-dl
+ott: sliv
+video: h.264 10bit
+dynamic range: hdr
+audio: ddp5.1
+languages: hindi + tamil
+subtitles: english
+group: extraflix.pw
+
+📦 2.45 gb">
+      <div class="template-head"><div><span class="eyebrow">Template 4</span><h3>Technical Release Info</h3></div><button class="copy" data-copy="&lt;b&gt;🎬 {name} {year}&lt;/b&gt;
+
+&lt;blockquote&gt;📐 Resolution: {resolution}
+📀 Source: {source_quality}
+📡 OTT: {ott}
+🎥 Video: {codec} {bit}
+✨ Dynamic Range: {dynamic_range}
+🔊 Audio: {audio}
+🌐 Languages: {languages}
+💬 Subtitles: {subtitles}
+🏷 Group: {release_group}&lt;/blockquote&gt;
+
+📦 &lt;code&gt;{size}&lt;/code&gt;">Copy template</button></div>
+      <pre><code>&lt;b&gt;🎬 {name} {year}&lt;/b&gt;
+
+&lt;blockquote&gt;📐 Resolution: {resolution}
+📀 Source: {source_quality}
+📡 OTT: {ott}
+🎥 Video: {codec} {bit}
+✨ Dynamic Range: {dynamic_range}
+🔊 Audio: {audio}
+🌐 Languages: {languages}
+💬 Subtitles: {subtitles}
+🏷 Group: {release_group}&lt;/blockquote&gt;
+
+📦 &lt;code&gt;{size}&lt;/code&gt;</code></pre>
+      <div class="output"><span>Example / note</span><pre>🎬 Habeebi 2026
+
+Resolution: 1080p
+Source: WEB-DL
+OTT: SLIV
+Video: H.264 10bit
+Dynamic Range: HDR
+Audio: DDP5.1
+Languages: Hindi + Tamil
+Subtitles: English
+Group: ExtraFlix.Pw
+
+📦 2.45 GB</pre></div>
+    </article><article class="template-card searchable" data-search="file verification &lt;b&gt;📁 {filename}&lt;/b&gt;
+
+📦 size: &lt;code&gt;{size}&lt;/code&gt;
+⏱ duration: &lt;code&gt;{duration}&lt;/code&gt;
+🧩 type: &lt;code&gt;{mime_type}&lt;/code&gt;
+
+🔐 md5:
+&lt;code&gt;{md5_hash}&lt;/code&gt; use this only when checksum verification is needed. {md5_hash} reads the complete file.">
+      <div class="template-head"><div><span class="eyebrow">Template 5</span><h3>File Verification</h3></div><button class="copy" data-copy="&lt;b&gt;📁 {filename}&lt;/b&gt;
+
+📦 Size: &lt;code&gt;{size}&lt;/code&gt;
+⏱ Duration: &lt;code&gt;{duration}&lt;/code&gt;
+🧩 Type: &lt;code&gt;{mime_type}&lt;/code&gt;
+
+🔐 MD5:
+&lt;code&gt;{md5_hash}&lt;/code&gt;">Copy template</button></div>
+      <pre><code>&lt;b&gt;📁 {filename}&lt;/b&gt;
+
+📦 Size: &lt;code&gt;{size}&lt;/code&gt;
+⏱ Duration: &lt;code&gt;{duration}&lt;/code&gt;
+🧩 Type: &lt;code&gt;{mime_type}&lt;/code&gt;
+
+🔐 MD5:
+&lt;code&gt;{md5_hash}&lt;/code&gt;</code></pre>
+      <div class="output"><span>Example / note</span><pre>Use this only when checksum verification is needed. {md5_hash} reads the complete file.</pre></div>
+    </article><article class="template-card searchable" data-search="minimal brand &lt;b&gt;{name} {year} {resolution} {source_quality} - op{extension}&lt;/b&gt; habeebi 2026 1080p web-dl - op.mkv">
+      <div class="template-head"><div><span class="eyebrow">Template 6</span><h3>Minimal Brand</h3></div><button class="copy" data-copy="&lt;b&gt;{name} {year} {resolution} {source_quality} - OP{extension}&lt;/b&gt;">Copy template</button></div>
+      <pre><code>&lt;b&gt;{name} {year} {resolution} {source_quality} - OP{extension}&lt;/b&gt;</code></pre>
+      <div class="output"><span>Example / note</span><pre>Habeebi 2026 1080p WEB-DL - OP.mkv</pre></div>
+    </article><article class="template-card searchable" data-search="ott release &lt;b&gt;{name} {year}&lt;/b&gt;
+
+📺 {resolution} • {source_quality}
+📡 {ott}
+🌐 [{languages}]
+🔊 {audio}
+🎥 {codec}
+💬 {shortsub}
+
+&lt;b&gt;op&lt;/b&gt; a compact ott-focused caption with language, audio, codec and subtitle details.">
+      <div class="template-head"><div><span class="eyebrow">Template 7</span><h3>OTT Release</h3></div><button class="copy" data-copy="&lt;b&gt;{name} {year}&lt;/b&gt;
+
+📺 {resolution} • {source_quality}
+📡 {ott}
+🌐 [{languages}]
+🔊 {audio}
+🎥 {codec}
+💬 {shortsub}
+
+&lt;b&gt;OP&lt;/b&gt;">Copy template</button></div>
+      <pre><code>&lt;b&gt;{name} {year}&lt;/b&gt;
+
+📺 {resolution} • {source_quality}
+📡 {ott}
+🌐 [{languages}]
+🔊 {audio}
+🎥 {codec}
+💬 {shortsub}
+
+&lt;b&gt;OP&lt;/b&gt;</code></pre>
+      <div class="output"><span>Example / note</span><pre>A compact OTT-focused caption with language, audio, codec and subtitle details.</pre></div>
+    </article><article class="template-card searchable" data-search="series release name &lt;b&gt;{name} s{season}e{episode} {resolution} {ott} {source_quality} {shortlang} {audio} {codec} {shortsub} - op{extension}&lt;/b&gt; stranger things s5e03 1080p nf web-dl dual ddp5.1 h.265 esub - op.mkv">
+      <div class="template-head"><div><span class="eyebrow">Template 8</span><h3>Series Release Name</h3></div><button class="copy" data-copy="&lt;b&gt;{name} S{season}E{episode} {resolution} {ott} {source_quality} {shortlang} {audio} {codec} {shortsub} - OP{extension}&lt;/b&gt;">Copy template</button></div>
+      <pre><code>&lt;b&gt;{name} S{season}E{episode} {resolution} {ott} {source_quality} {shortlang} {audio} {codec} {shortsub} - OP{extension}&lt;/b&gt;</code></pre>
+      <div class="output"><span>Example / note</span><pre>Stranger Things S5E03 1080p NF WEB-DL DUAL DDP5.1 H.265 ESub - OP.mkv</pre></div>
+    </article></div>
+</section>
+<section id="tips" class="doc-section">
+  <div class="section-title"><span>💡 Quick Tips</span></div>
+  <div class="tips-grid">
+    <div><code>{name}</code><span>Clean movie / series title</span></div>
+    <div><code>{resolution}</code><span>720p / 1080p / 2160p</span></div>
+    <div><code>{source_quality}</code><span>WEB-DL / BluRay / REMUX</span></div>
+    <div><code>{languages}</code><span>Hindi + Tamil style</span></div>
+    <div><code>{shortlang}</code><span>DUAL / Multi3 style</span></div>
+    <div><code>{audio}</code><span>DDP5.1 / AAC2.0</span></div>
+    <div><code>{codec}</code><span>H.264 / H.265 / AV1</span></div>
+    <div><code>{shortsub}</code><span>ESub / MSub / Sub</span></div>
+    <div><code>{release_group}</code><span>Release / encoder group</span></div>
+    <div><code>{md5_hash}</code><span>Use only when checksum is needed</span></div>
+  </div>
+</section>
+<section id="publish" class="doc-section publish-card">
+  <span class="pill">Static & portable</span><h2>Made for GitHub Pages</h2><p>This guide has no framework, build step or external dependency. Upload the files to a repository and publish from the <code>main</code> branch root.</p>
+</section>
+<footer><span>OP Documentation</span><span>Custom Caption Guide</span></footer>
+</main>
+</div>
+<div id="toast" class="toast">Copied</div>
+<button id="toTop" class="to-top" title="Back to top">↑</button>
+<script src="script.js"></script>
+</body></html>
