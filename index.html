@@ -13,12 +13,12 @@
 <div class="ambient a1"></div><div class="ambient a2"></div>
 <header class="topbar">
   <a class="brand" href="#top"><span class="brand-mark">OP</span><span>Caption Guide</span></a>
-  <div class="top-actions"><button id="themeToggle" class="icon-btn" title="Toggle theme">☀️</button><a class="github-btn" href="#publish">GitHub Pages</a></div>
+  <div class="top-actions"><button id="themeToggle" class="icon-btn" title="Toggle theme">☀️</button><a class="github-btn" href="https://github.com/Angel-noori/op-caption-guide" target="_blank" rel="noopener noreferrer">GitHub</a></div>
 </header>
 <div class="layout" id="top">
 <aside class="sidebar">
   <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search variables, e.g. codec..." autocomplete="off"><kbd>/</kbd></div>
-  <nav><a href="#file">📁 File Information</a><a href="#title">🎬 Title / Movie / Series</a><a href="#source">📺 Resolution / Source</a><a href="#video">🎥 Video Information</a><a href="#audio">🔊 Audio / Language</a><a href="#subs">💬 Subtitle Information</a><a href="#release">🏷 Release Information</a><a href="#original">📨 Original Source Information</a><a href="#checksum">🔐 Checksum</a><a href="#examples">🧪 Output Examples</a><a href="#differences">🧠 Important Differences</a><a href="#html-formatting">✨ HTML Formatting</a><a href="#templates">📝 Templates</a><a href="#tips">💡 Quick Tips</a></nav>
+  <nav><a href="#file">📁 File Information</a><a href="#title">🎬 Title / Movie / Series</a><a href="#source">📺 Resolution / Source</a><a href="#video">🎥 Video Information</a><a href="#audio">🔊 Audio / Language</a><a href="#subs">💬 Subtitle Information</a><a href="#release">🏷 Release Information</a><a href="#original">📨 Original Source Information</a><a href="#checksum">🔐 Checksum</a><a href="#examples">🧪 Output Examples</a><a href="#differences">🧠 Important Differences</a><a href="#html-formatting">✨ HTML Formatting</a><a href="#templates">📝 Templates</a><a href="#tips">💡 Quick Tips</a><a href="#recommended">✅ Recommended Template</a></nav>
   <div class="side-note"><strong>MD5 is lazy</strong><p><code>{md5_hash}</code> is calculated only when your template actually uses it.</p></div>
 </aside>
 <main>
@@ -312,8 +312,23 @@ Group: ExtraFlix.Pw
     <div><code>{md5_hash}</code><span>Use only when checksum is needed</span></div>
   </div>
 </section>
-<section id="publish" class="doc-section publish-card">
-  <span class="pill">Static & portable</span><h2>Made for GitHub Pages</h2><p>This guide has no framework, build step or external dependency. Upload the files to a repository and publish from the <code>main</code> branch root.</p>
+
+<section id="recommended" class="doc-section">
+  <div class="section-title"><span>✅ Recommended General Template</span></div>
+  <article class="template-card searchable" data-search="recommended general template {name} {year} {resolution} {ott} {source_quality} {shortlang} {languages} {audio} {codec} {shortsub} op extension">
+    <div class="template-head">
+      <div>
+        <span class="eyebrow">Recommended</span>
+        <h3>General Movie / Series Template</h3>
+      </div>
+      <button class="copy" data-copy="&lt;b&gt;{name} {year} {resolution} {ott} {source_quality} {shortlang} [{languages}] {audio} {codec} {shortsub} - OP{extension}&lt;/b&gt;">Copy template</button>
+    </div>
+    <pre><code>&lt;b&gt;{name} {year} {resolution} {ott} {source_quality} {shortlang} [{languages}] {audio} {codec} {shortsub} - OP{extension}&lt;/b&gt;</code></pre>
+    <div class="output">
+      <span>Why this one?</span>
+      <pre>This format works well for most movie and series releases while keeping the caption short and easy to read.</pre>
+    </div>
+  </article>
 </section>
 <footer><span>OP Documentation</span><span>Custom Caption Guide</span></footer>
 </main>
